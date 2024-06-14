@@ -1,9 +1,9 @@
 {
   "compilerOptions": {
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "target": "es2022", // used to compile to a certain js standard
+    "lib": ["dom", "dom.iterable", "esnext"], // used to write code
     "allowJs": true,
     "skipLibCheck": true,
-    "strict": true,
     "noEmit": true,
     "esModuleInterop": true,
     "module": "esnext",
@@ -18,8 +18,22 @@
       }
     ],
     "paths": {
-      "@/*": ["./src/*"]
-    }
+      "@/*": ["./src/*"],
+      "src/*": ["./src/*"],
+      "app/*": ["./src/app/*"],
+    },
+    
+    "strict": true,
+    "noPropertyAccessFromIndexSignature": false, // allow access obj.prop in indexed type instead of obj['prop']
+    "noUncheckedIndexedAccess": false, // add undefined when get props from indexed type
+    "exactOptionalPropertyTypes": true, // '?' means absence of property but not undefined
+    "downlevelIteration": true, // use [...anyIterator]
+    "noImplicitAny": false,
+    "noImplicitOverride": true,
+    "allowUnreachableCode": true, // allow code after the return statement that never runs
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+    "useDefineForClassFields": true, // enables some modern patterns for class properties initialization
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
   "exclude": ["node_modules"]
