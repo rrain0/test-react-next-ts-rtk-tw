@@ -15,7 +15,7 @@ const goodsInitialState: GoodsState = {
       price: '100',
       description: 'This unique art object personifies the three-dimensionality of space',
     },
-    {
+    /* {
       id: 'table',
       name: 'Table',
       price: '40',
@@ -26,14 +26,18 @@ const goodsInitialState: GoodsState = {
       name: 'Sphere',
       price: '80',
       description: 'It is round from any side',
-    },
+    }, */
   ],
 }
 
 const goodsSlice = createSlice({
   name: 'goods',
   initialState: goodsInitialState,
-  reducers: { },
+  reducers: {
+    setGoods: (s, a: { payload: Good[] }) => {
+      s.goods = a.payload
+    }
+  },
 })
 
 export const goodsActions = goodsSlice.actions

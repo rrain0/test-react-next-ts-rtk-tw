@@ -3,7 +3,10 @@ import cartReducer from 'src/redux/reducers/cartReducer'
 import goodsReducer from 'src/redux/reducers/goodsReducer'
 
 
+
+
 export const makeStore = () => {
+  
   const store = configureStore({
     reducer: {
       goods: goodsReducer,

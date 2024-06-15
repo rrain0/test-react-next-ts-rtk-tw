@@ -1,3 +1,4 @@
+'use client'
 import React from 'react'
 import Goods from 'src/app/goods/Goods'
 import PageFrame from 'src/ui/components/PageFrame'
@@ -12,12 +13,11 @@ React.memo(
     <div className="
       flex flex-col p-40 gap-10
     ">
-      <Goods/>
+      <Goods />
     </div>
   </PageFrame>
 })
 export default GoodsPage
-
 
 
 

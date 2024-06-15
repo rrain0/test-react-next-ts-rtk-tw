@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import React from 'react'
 import StoreProvider from 'src/app/StoreProvider'
+import { Good } from 'src/model/Good'
 import { ChildrenProps } from 'src/util/react/ChildrenProps'
 
 
@@ -20,8 +21,11 @@ export const metadata: Metadata = {
 
 const Root =
 React.memo(
-(props: ChildrenProps) => {
-  return <StoreProvider>
+async (props: ChildrenProps) => {
+  
+  const goods = await fetchAsyncGoods()
+  
+  return <StoreProvider initialGoods={goods}>
     <RootLayout>
       {props.children}
     </RootLayout>
@@ -43,3 +47,39 @@ React.memo(
     </body>
   </html>
 })
+
+
+
+
+
+
+
+async function fetchAsyncGoods(): Promise<Good[]> {
+  return new Promise((res, rej) => setTimeout(
+    () => res(goodsToFetchAsync),
+    10000
+  ))
+}
+
+
+
+const goodsToFetchAsync: Good[] = [
+  {
+    id: 'triangle',
+    name: 'Cube',
+    price: '100',
+    description: 'This unique art object personifies the three-dimensionality of space',
+  },
+  {
+    id: 'table',
+    name: 'Table',
+    price: '40',
+    description: 'Table with intricate design',
+  },
+  {
+    id: 'sphere',
+    name: 'Sphere',
+    price: '80',
+    description: 'It is round from any side',
+  },
+]
