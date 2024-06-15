@@ -13,7 +13,7 @@ const Goods =
 React.memo(
 () => {
   
-  const { goods } = useAppSelector(s => s.goods)
+  const { goods, filter } = useAppSelector(s => s.goods)
   
   //const ww = window.innerWidth
   //console.log('ww', ww)
@@ -28,7 +28,16 @@ React.memo(
       </Button>
     </Link>
     
-    {goods.map(it => <GoodCard key={it.id} good={it} />)}
+    <div className="flex flex-row flex-wrap gap-4">
+      {
+        goods
+          .filter(it => {
+            if (!filter.type.length) return true
+            return filter.type.includes(it.type)
+          })
+          .map(it => <GoodCard key={it.id} good={it} />)
+      }
+    </div>
     
   </div>
 })

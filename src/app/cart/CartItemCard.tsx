@@ -24,7 +24,7 @@ const CartItemCard = React.memo(
   return <Card
     title={name}
     classNames={{
-      body: "flex flex-col gap-4 items-start"
+      body: "w-[300px] flex flex-col gap-4 items-start"
     }}
   >
     <div>Price: {price}</div>

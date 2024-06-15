@@ -67,19 +67,29 @@ const goodsToFetchAsync: Good[] = [
   {
     id: 'triangle',
     name: 'Cube',
+    type: 'geometric figure',
     price: '100',
     description: 'This unique art object personifies the three-dimensionality of space',
   },
   {
     id: 'table',
     name: 'Table',
+    type: 'furniture',
     price: '40',
     description: 'Table with intricate design',
   },
   {
     id: 'sphere',
     name: 'Sphere',
+    type: 'geometric figure',
     price: '80',
     description: 'It is round from any side',
+  },
+  {
+    id: 'wardrobe',
+    name: 'Wardrobe',
+    type: 'furniture',
+    price: '200',
+    description: 'This wardrobe leads to Narnia',
   },
 ]

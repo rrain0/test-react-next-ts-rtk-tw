@@ -24,8 +24,10 @@ React.memo(
       </Button>
     </Link>
     
-    {items.map(it => <CartItemCard cartItem={it} />)}
-    
+    <div className="flex flex-row flex-wrap gap-4">
+      {items.map(it => <CartItemCard cartItem={it}/>)}
+    </div>
+  
   </div>
 })
 export default CartItems
