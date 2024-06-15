@@ -15,6 +15,9 @@ React.memo(
   
   const { goods } = useAppSelector(s => s.goods)
   
+  //const ww = window.innerWidth
+  //console.log('ww', ww)
+  
   return <div className="flex flex-col gap-4">
     
     <Link href="/cart">

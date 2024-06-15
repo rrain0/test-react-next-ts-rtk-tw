@@ -1,5 +1,6 @@
 'use client'
 import React from 'react'
+import CartItems from 'src/app/cart/CartItems'
 import Goods from 'src/app/goods/Goods'
 import PageFrame from 'src/ui/components/PageFrame'
 
@@ -13,7 +14,13 @@ React.memo(
     <div className="
       flex flex-col p-40 gap-10
     ">
+      
+      <div>ТОВАРЫ:</div>
       <Goods />
+      
+      <div>КОРЗИНА:</div>
+      <CartItems/>
+      
     </div>
   </PageFrame>
 })
