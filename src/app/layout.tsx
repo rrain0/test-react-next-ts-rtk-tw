@@ -3,10 +3,11 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import React from 'react'
 import StoreProvider from 'src/app/StoreProvider'
-import { TypeUtils } from 'src/util/common/TypeUtils'
-import Puro = TypeUtils.Puro
+import { ChildrenProps } from 'src/util/react/ChildrenProps'
+
 
 const interFont = Inter({ subsets: ["latin"] })
+
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -15,13 +16,11 @@ export const metadata: Metadata = {
 
 
 
-type RootProps = Puro<{
-  children: React.ReactNode
-}>
+
 
 const Root =
 React.memo(
-(props: RootProps) => {
+(props: ChildrenProps) => {
   return <StoreProvider>
     <RootLayout>
       {props.children}
@@ -33,13 +32,10 @@ export default Root
 
 
 
-type RootLayoutProps = Puro<{
-  children: React.ReactNode
-}>
 
 const RootLayout =
 React.memo(
-(props: RootLayoutProps) => {
+(props: ChildrenProps) => {
   
   return <html lang="en">
     <body className={interFont.className}>

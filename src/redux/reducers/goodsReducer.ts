@@ -14,7 +14,19 @@ const goodsInitialState: GoodsState = {
       name: 'Cube',
       price: '100',
       description: 'This unique art object personifies the three-dimensionality of space',
-    }
+    },
+    {
+      id: 'table',
+      name: 'Table',
+      price: '40',
+      description: 'Table with intricate design',
+    },
+    {
+      id: 'sphere',
+      name: 'Sphere',
+      price: '80',
+      description: 'It is round from any side',
+    },
   ],
 }
 
